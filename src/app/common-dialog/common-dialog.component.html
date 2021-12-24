@@ -1,0 +1,12 @@
+<div *ngIf="data.title == 'image'">
+  <mat-icon (click)="closeDialog()" title="close">cancel</mat-icon>
+  <div style="text-align:center" *ngIf="data.ob.propertyImages.length > 0">
+    <h2>{{data.ob.propertyId}}-{{data.ob.name}}</h2>
+    <img *ngFor="let src1 of  data.ob.propertyImages" [src]=" 'data:image/jpeg;base64,' + src1.image"
+         style="width:250px;height: 300px;">
+  </div>
+  <div style="text-align:center" *ngIf="data.ob.propertyImages.length == 0">
+    <h2>{{data.ob.propertyId}}-{{data.ob.name}}</h2>
+    <img  mat-card-avatar src="../../../../assets/logo/noimage.jpg" style="width:250px;height: 300px;">
+  </div>
+</div>
